@@ -1,100 +1,84 @@
-## Lab 1 -- Learning to use Java Math, Input, and Output
-30 points
-Due: 1/30 before class
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/u9Gu-vnX)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=13495734)
+# CS 212 - Programming Assignment 0
 
-## Purpose:
-This assignment is aimed at giving you experience with Java math, variables, and user input. It will also give you more practice with IntelliJ and GitHub.
+## Summary
+For this assignment, you will develop a program to output the number of infectious cases for a new disease.
 
-## Problem:
-You are doing some grocery shopping and would like to figure out how much it is going to cost. However, you only have two hands and you have to walk home. Thus, you are going to buy exactly two bags of things. You are going to write a program to provide you with a receipt for your shopping trip.
 
-## Details:
-The program will ask for three pieces of infortmation about each item: 
-1. The name of the item.
-2. The number of units of the item. This store does NOT sell fractional units of things.
-3. The cost per unit.
+## Description
+We have come a long way since Covid-19 was first detected. Covid-19 spreads very fast because it is a very contagious virus. Scientists often use the R number to measure how contagious a disease is. R represents the number of people an infected person would spread the virus to on average.
 
-After collecting the information for two(2) items, the program will output the items purchased, the cost per item, and the total cost.
+In the early month of the pandemic, scientists estimated that the R number was close to [2 in some areas](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7074654/). If we assume R is 2, we start with 1 infected case (day 0), and it takes a day to pass on the virus. Then, after 1 day, we would have 1 (day 0) + 2 (new) = 3 cases. After 2 days, we would have 1 (day 0) + 2 (day 1) + 4 (new) = 7 cases. After 3 days, we would have 1(day 0) + 2 (day 1) + 4 (day 2) + 8 (new) = 15 cases. And we can go on and on. After 10 days, we would end up with a total of 1023 cases.
 
-A sample run of the program may look like this:
+## Programming Assignment 0
+You are tasked with writing a program to simulate how fast a new disease is spreading by printing out the number of cases for the first 10 days (including day 0),  given the R number as a user input. You can assume the user will enter a non-negative, floating-point number.
 
-_Welcome to Mr. John's Shop'n'Save'n'Enjoy, home of the discount dish towel. 
-We hope you had a pleasent shopping experience and would be thrilled to provide you with a receipt to use as a momento of your time here with us today._
+Your program should work as follows:
 
-What was the first item that you purchased?
-Hulk Ice Cream
-Great! How many units of Hulk Ice Cream did you buy?
-67
-Okay! How much did Hulk Ice Cream cost per unit?
-1.05
+```
+What is the R number? 2
+Day Case(s)
+0	1.0
+1	3.0
+2	7.0
+3	15.0
+4	31.0
+5	63.0
+6	127.0
+7	255.0
+8	511.0
+9	1023.0
+```
+Another run:
 
-What was the second item that you purchased?
-A ride on a Shetland Pony
-Great! How many units of A ride on a Shetland Pony did you purchase?
-1
-Okay! How much did A ride on a Shetland Pony cost per unit?
-23.99
+```
+What is the R number? 1.5
+Day Case(s)
+0	1.0
+1	2.5
+2	4.75
+3	8.125
+4	13.1875
+5	20.78125
+6	32.171875
+7	49.257812
+8	74.88672
+9	113.33008
+```
 
-Sounds like you had a productive shopping trip. Here is your receipt:
+Another run:
 
-*****
-Hulk Ice Cream 67@1.05 70.35
-A ride on a Shetland Pony 1@23.99 23.99
-----------
-TOTAL: 94.34
-*****
+```
+What is the R number? 5
+Day Case(s)
+0	1.0
+1	6.0
+2	31.0
+3	156.0
+4	781.0
+5	3906.0
+6	19531.0
+7	97656.0
+8	488281.0
+9	2441406.0
+```
 
-Thanks for your visit. Have a day.
 
-## Requirements:
-1. Complete a set of test cases.
-2. Complete an algorithm or psuedocode before you program.
-3. Follow good programming practices including peer programming (When 1/2 the code is written, or 1/2 of class is over, switch drivers).
-4. Ensure your code meets all all detailed requirements.
-5. Properly use variables (including enrsuring the type is correct), input, math, and output.
-6. Use your test cases to test that your program works correctly. Fix any errors.
+## Submission
+### Part 1 (10 points): Design and test cases.
+Due: 9/22
 
-## Reminders:
-You will write your program in the "pair programming" mode: one of you is the driver while the other is the navigator.
-
-Make sure you understand the problem you are being asked to solve. What are the input(s), output(s), and calculation(s)?
-
-Write Test Cases: create a series of test cases in Excel to use to determine that your program works correctly. Ideally, have excel calculate the answer for you.
-
-Complete the algorithm for your calculations that is started in algorithm.txt. Whoever didn't type the majority of the test cases, should type the algorithm Your program should do ALL of the calculations for you, and should work for ANY valid inputs. You do not need to do error checking, yet.
-
-Code: Create a new Java file, and follow your algorithm to write your code. You may assume that your input will always be of the correct type. Whoever has done the least typing at this point should start as driver.
-
-Fix compiler errors: Run your program and fix any errors that appear.
-
-Test: Once your code runs and you think it’s complete, test it using your test cases -- run, give the input value as input, and see if you get the right output. If not, you need to fix the error(s) in your code!
-
-Make sure you’ve created a human readable essay (i.e. your program). Did you follow the code readability guidelines? If not, fix your code so that it is readable. You should have comments above each chunk of code!
-
-Include an updated version of the intro comments below at the very top of your Python file. Do not include the brackets [ and ] but replace them with what is asked for inside of them. Be sure to keep the titles at the start of each line. 
-### Programmers: [your names here] 
-### Course: CS212, Mr. John 
-### Due Date: 1/30/23 
-### Lab Assignment: 1 
-### Problem Statement: [describe what task this program performs] 
-### Data In: [list the type of information your user input requests] 
-### Data Out: [list the type of information output with print] 
-### Credits: [Is your code based on an example in the book, in class, or something else?]
-
-Once you are done in lab, even if you haven’t finished the assignment yet, you need to Commit and Push your changes, and upload your test cases to Moodle.
-
-## What to Submit:
 To GitHub:
-1. Completed .java file
-2. Algorithm in algorithm.txt
+* In the design.txt file, your algorithm. You may either use the language of algorithms from 151 or some other [Pseudocode, such as in these examples.](https://www.unf.edu/~broggio/cop2221/2221pseu.htm). (You don't need to use a loop for this assignment, but using a loop would make it easier)
 
-To Moodle in the Lab1 assignment (both partners need to do this): 
-1. An Excel file with your test cases (can be the same file the partners worked on).
-2. An individual reflection on the lab (min 100 words, max one page.) This should be in PDF or text ONLY. No .pages!.
-    You should address the following questions:
-    a. How was the experience working with your partner?
-    b. What did you learn in this lab?
-    c. What were the easiest and hardest things about working with types?
-    d. What were the easiest and hardest things about working with user input?
+* An Excel file with your test cases (at least 5 new test cases and at least 1 has to be a corner case).
 
-As a reminder, reflections count toward your participation grade.
+
+### Part 2 (30 points)
+Due: 2/2
+
+To GitHub:
+* Your final Java code in PA0.java
+
+
